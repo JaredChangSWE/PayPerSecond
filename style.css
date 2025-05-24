@@ -134,3 +134,25 @@ h2 {
         font-size: 15px;
     }
 }
+
+/* Added rules */
+.hidden {
+    display: none !important; /* Using !important to ensure it overrides other display properties if necessary */
+}
+
+#editSettingsButton {
+    background-color: #6c757d; /* A neutral, secondary color */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Slightly smaller padding than save for differentiation if desired */
+    border-radius: 5px;
+    font-size: 15px; /* Slightly smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Auto width based on content */
+    margin-top: 20px; /* Space above it */
+}
+
+#editSettingsButton:hover {
+    background-color: #5a6268;
+}

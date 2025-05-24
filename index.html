@@ -9,9 +9,10 @@
 <body>
     <div class="container">
         <h1>Salary Settings</h1>
-        <div class="settings">
-            <div>
-                <label for="monthlySalary">Monthly Salary:</label>
+        <div id="settingsArea"> <!-- New wrapper div -->
+            <div class="settings">
+                <div>
+                    <label for="monthlySalary">Monthly Salary:</label>
                 <input type="number" id="monthlySalary" placeholder="Enter your monthly salary">
             </div>
             <div>
@@ -23,7 +24,8 @@
                 <input type="time" id="endTime">
             </div>
             <button id="saveSettings">Save Settings</button>
-        </div>
+            </div>
+        </div> <!-- End of settingsArea -->
 
         <div class="salary-display-container">
             <h2>Current Accumulated Salary</h2>
@@ -31,6 +33,9 @@
                 0.00
             </div>
         </div>
+
+        <button id="editSettingsButton" class="hidden">Edit Settings</button> <!-- New button, initially hidden -->
+
     </div>
     <script src="script.js" defer></script>
 </body>
