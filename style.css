@@ -1,31 +1,43 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Share Tech Mono', monospace; /* Changed */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: #0a0f0f; /* Base color */
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03), /* Very faint green line */
+        rgba(0, 255, 0, 0.03) 1px, /* Line thickness */
+        transparent 1px,       /* Space after line */
+        transparent 3px        /* Total space for line + gap = 3px pattern */
+    );
+    color: #00ff00; /* Changed */
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: rgba(0, 255, 0, 0.05); /* Changed */
     padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Changed */
+    border: 1px solid #00ff00; /* Added */
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00 inset; /* Changed */
     text-align: center;
     width: 90%;
     max-width: 500px;
 }
 
 h1 {
-    color: #2c3e50;
+    font-family: 'Press Start 2P', cursive; /* Changed */
+    color: #00ff00; /* Changed */
+    text-shadow: 0 0 5px #00ff00; /* Added */
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #34495e;
+    font-family: 'Press Start 2P', cursive; /* Changed */
+    color: #00ff00; /* Changed */
+    text-shadow: 0 0 5px #00ff00; /* Added */
     margin-top: 30px;
     margin-bottom: 10px;
 }
@@ -38,75 +50,97 @@ h2 {
 }
 
 .settings label {
+    font-family: 'Share Tech Mono', monospace;
+    color: #00ff00;
+    font-weight: normal;
     margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
 }
 
 .settings input[type="number"],
 .settings input[type="time"] {
-    width: calc(100% - 22px); /* Account for padding and border */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: rgba(0, 255, 0, 0.05);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    border-radius: 3px;
+    padding: 8px;
+    width: 100%;
     box-sizing: border-box;
+    font-size: 16px; /* Keeping this for now */
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.settings input[type="number"]::placeholder,
+.settings input[type="time"]::placeholder {
+    color: rgba(0, 255, 0, 0.5);
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .settings input[type="number"]:focus,
 .settings input[type="time"]:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    border-color: #00ff00;
+    box-shadow: 0 0 8px #00ff00;
 }
 
-#saveSettings {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 16px;
+#saveSettings, #editSettingsButton { /* Combined and updated styles */
+    font-family: 'Share Tech Mono', monospace;
+    background-color: transparent;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    border-radius: 3px;
+    padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 10px;
+    text-transform: uppercase;
+    width: 100%; /* Both buttons full width */
+    margin-top: 15px; /* Standardized margin */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
-#saveSettings:hover {
-    background-color: #0056b3;
+#saveSettings:hover, #editSettingsButton:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 10px #00ff00;
+    color: #00ff00; /* Ensure color stays green on hover */
+}
+
+#saveSettings:active, #editSettingsButton:active {
+    background-color: rgba(0, 255, 0, 0.2);
 }
 
 .salary-display-container {
     margin-top: 30px;
-    padding: 20px;
-    background-color: #e9ecef;
-    border-radius: 8px;
+    padding: 20px; /* Kept */
+    background-color: transparent; /* Changed */
+    border: 1px dashed #00ff00; /* Changed */
+    border-radius: 0; /* Changed for sharper look with dashed border */
+    box-shadow: none; /* Removed previous inset glow */
 }
 
 .salary-display {
-    font-size: 4rem; /* Large font size */
-    font-weight: bold;
-    color: #28a745; /* Green color for salary */
-    padding: 20px 0;
-    letter-spacing: 2px;
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font for a 'digital' feel */
-    animation: pulse 2s infinite ease-in-out; /* Subtle pulse animation */
+    font-family: 'Press Start 2P', cursive; /* Ensured */
+    color: #00ff00; /* Ensured */
+    font-size: 5.5rem; /* Changed */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00, 0 0 20px #00ff00; /* Changed */
+    font-weight: normal; /* Ensured as Press Start 2P is blocky */
+    letter-spacing: normal; /* Changed */
+    padding: 15px 0; /* Kept */
+    animation: digitalPulse 1.5s infinite cubic-bezier(0.5, 0, 0.5, 1); /* Changed */
 }
 
-/* Basic pulse animation */
-@keyframes pulse {
-    0% {
+/* New digitalPulse animation */
+@keyframes digitalPulse {
+    0%, 100% {
         transform: scale(1);
-        opacity: 0.9;
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00, 0 0 20px #00ff00;
+        opacity: 0.8;
     }
     50% {
-        transform: scale(1.02);
+        transform: scale(1.05); /* Slightly larger scale */
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; /* More intense glow */
         opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.9;
     }
 }
 
@@ -117,42 +151,32 @@ h2 {
     }
 
     .salary-display {
-        font-size: 3rem;
+        font-size: 3.5rem; /* Adjusted for smaller screens with new base size */
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem; /* Adjusted */
     }
 
     h2 {
-        font-size: 1.3rem;
+        font-size: 1.1rem; /* Adjusted */
     }
 
     .settings input[type="number"],
     .settings input[type="time"],
-    #saveSettings {
-        font-size: 15px;
+    #saveSettings, #editSettingsButton { /* Ensure buttons also scale */
+        font-size: 14px; /* Adjusted */
+        padding: 8px 10px; /* Adjust padding for buttons on small screens */
     }
 }
 
-/* Added rules */
+/* Added rules (ensure .hidden is still here and correct) */
 .hidden {
-    display: none !important; /* Using !important to ensure it overrides other display properties if necessary */
+    display: none !important;
 }
 
-#editSettingsButton {
-    background-color: #6c757d; /* A neutral, secondary color */
-    color: white;
-    border: none;
-    padding: 10px 20px; /* Slightly smaller padding than save for differentiation if desired */
-    border-radius: 5px;
-    font-size: 15px; /* Slightly smaller font size */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: auto; /* Auto width based on content */
-    margin-top: 20px; /* Space above it */
-}
-
-#editSettingsButton:hover {
-    background-color: #5a6268;
+/* #editSettingsButton specific margin if needed, but now combined */
+/* If #editSettingsButton needs a different top margin than #saveSettings, define it separately */
+/* e.g. #editSettingsButton { margin-top: 20px; } */
+/* For now, they share the same margin-top via the combined rule */
 }
