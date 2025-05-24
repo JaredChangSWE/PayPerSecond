@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('monthlySalary', monthlySalary);
         localStorage.setItem('startTime', startTime);
         localStorage.setItem('endTime', endTime);
-        alert('Settings saved!');
 
         settingsArea.classList.add('hidden'); // New
         editSettingsButton.classList.remove('hidden'); // New
