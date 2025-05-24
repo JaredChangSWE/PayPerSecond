@@ -24,7 +24,6 @@ body {
     box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00 inset; /* Changed */
     text-align: center;
     width: 90%;
-    max-width: 500px;
 }
 
 h1 {
