@@ -19,6 +19,10 @@
                 <input type="number" id="monthlySalary" placeholder="Enter your monthly salary">
             </div>
             <div>
+                    <label for="annualSalary">Annual Salary:</label>
+                    <input type="number" id="annualSalary" placeholder="Enter your annual salary">
+            </div>
+            <div>
                 <label for="startTime">Work Start Time:</label>
                 <input type="time" id="startTime">
             </div>
@@ -26,9 +30,27 @@
                 <label for="endTime">Work End Time:</label>
                 <input type="time" id="endTime">
             </div>
+            <div>
+                    <label for="payday">Payday (Day of Month):</label>
+                    <input type="number" id="payday" min="1" max="31" placeholder="e.g., 15">
+            </div>
             <button id="saveSettings">Save Settings</button>
             </div>
         </div> <!-- End of settingsArea -->
+
+        <div class="salary-display-container">
+            <h2>Salary Earned This Month</h2>
+            <div id="monthSalarySoFar" class="salary-display">
+                0.00
+            </div>
+        </div>
+
+        <div class="salary-display-container">
+            <h2>Time Until Next Payday</h2>
+            <div id="timeUntilPayday" class="salary-display">
+                --
+            </div>
+        </div>
 
         <div class="salary-display-container">
             <h2>Current Accumulated Salary</h2>

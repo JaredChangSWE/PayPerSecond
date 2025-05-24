@@ -129,6 +129,11 @@ h2 {
     animation: digitalPulse 1.5s infinite cubic-bezier(0.5, 0, 0.5, 1); /* Changed */
 }
 
+/* Specific style for timeUntilPayday to handle longer text */
+#timeUntilPayday {
+    font-size: 3.8rem; /* Slightly smaller than salaryDisplay */
+}
+
 /* New digitalPulse animation */
 @keyframes digitalPulse {
     0%, 100% {
@@ -151,6 +156,11 @@ h2 {
 
     .salary-display {
         font-size: 3.5rem; /* Adjusted for smaller screens with new base size */
+    }
+
+    /* Responsive adjustment for timeUntilPayday */
+    #timeUntilPayday {
+        font-size: 2.5rem; /* Further reduce for small screens */
     }
 
     h1 {
